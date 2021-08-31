@@ -1,1 +1,1 @@
-from pushcollector._impl import Collector
+from _impl import Collector
