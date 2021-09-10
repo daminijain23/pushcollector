@@ -35,7 +35,7 @@ jobs:
         run: pip install tox
       - name: Run Tox
         run: tox -e static
-  py36-pidiff:
+  pidiff:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -63,10 +63,10 @@ jobs:
           python-version: 3.8
       - name: Install Tox
         run: pip install tox
-      - name: Install pytest cov
-        run: pip install pytest-cov
       - name: Run Tox
         run: tox -e cov
+      - name: Install pytest cov
+        run: pip install pytest-cov
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.0.15
         with:
