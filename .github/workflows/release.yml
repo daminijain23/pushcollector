@@ -2,14 +2,8 @@ name: Release on PyPI
 
 on:
   push:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     branches:
     - '*'
->>>>>>> 1a0ed02 (Release to PyPi)
-=======
->>>>>>> ed247d1 (Release to PyPi)
     tags:
     - v*
 
@@ -29,11 +23,7 @@ jobs:
     - name: Build and publish
       env:
         TWINE_USERNAME: __token__
-<<<<<<< HEAD
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-=======
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
->>>>>>> 1a0ed02 (Release to PyPi)
       run: |
         python setup.py sdist bdist_wheel
         twine upload dist/*

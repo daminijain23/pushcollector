@@ -8,17 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install RPM
-<<<<<<< HEAD
-<<<<<<< HEAD
         run: sudo apt-get install -y rpm libkrb5-dev
-=======
-        run: sudo apt-get install -y rpm
->>>>>>> 9e27898 (Added tox tests)
-=======
-        run: |
-          sudo apt-get install -y rpm
-          sudo apt-get install -y libkrb5-dev
->>>>>>> 57b6ff5 (krb5 install)
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -32,17 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install RPM
-<<<<<<< HEAD
-<<<<<<< HEAD
         run: sudo apt-get install -y rpm libkrb5-dev
-=======
-        run: sudo apt-get install -y rpm
->>>>>>> 9e27898 (Added tox tests)
-=======
-        run: |
-          sudo apt-get install -y rpm
-          sudo apt-get install -y libkrb5-dev
->>>>>>> 57b6ff5 (krb5 install)
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -51,15 +31,7 @@ jobs:
         run: pip install tox
       - name: Run Tox
         run: tox -e static
-<<<<<<< HEAD
-<<<<<<< HEAD
   pidiff:
-=======
-  py36-pidiff:
->>>>>>> 9e27898 (Added tox tests)
-=======
-  pidiff:
->>>>>>> 1a0ed02 (Release to PyPi)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -78,25 +50,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install RPM
-<<<<<<< HEAD
-<<<<<<< HEAD
         run: sudo apt-get install -y rpm libkrb5-dev
-=======
-        run: sudo apt-get install -y rpm
->>>>>>> 9e27898 (Added tox tests)
-=======
-        run: |
-          sudo apt-get install -y rpm
-          sudo apt-get install -y libkrb5-dev
->>>>>>> 57b6ff5 (krb5 install)
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
       - name: Install Tox
         run: pip install tox
-<<<<<<< HEAD
-<<<<<<< HEAD
       - name: Run Tox
         run: tox -e cov
       - name: Install pytest cov
@@ -104,20 +64,6 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.0.15
         with:
-=======
-      - name: Install pytest cov
-        run: pip install pytest-cov
-=======
->>>>>>> 1a0ed02 (Release to PyPi)
-      - name: Run Tox
-        run: tox -e cov
-      - name: Install pytest cov
-        run: pip install pytest-cov
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1.0.15
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
->>>>>>> 9e27898 (Added tox tests)
           fail_ci_if_error: true
           verbose: true
   docs:
@@ -133,14 +79,4 @@ jobs:
       - name: Install Tox
         run: pip install tox
       - name: Run Tox
-<<<<<<< HEAD
-<<<<<<< HEAD
         run: tox -e docs
-=======
-        run: |
-          tox -e docs
-          scripts/push-docs
->>>>>>> 9e27898 (Added tox tests)
-=======
-        run: tox -e docs
->>>>>>> 965ff38 (push docs removal)
