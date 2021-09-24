@@ -49,7 +49,8 @@ type: object
 properties:
   # A filename for this push item.
   #
-  # Only a filename (basename) should be provided, with no leading path.
+  # The filename should always include the basename component of a file&#39;s path.
+  # It may optionally include leading path components.
   #
   # A non-empty filename must always be provided, even for push items which do
   # not represent a file. In such cases, an identifier for the push item which
@@ -59,7 +60,6 @@ properties:
   # despite that manifests are not guaranteed to be stored as files.
   filename:
     type: string
-    pattern: &quot;^[^/]+$&quot;
 
   # The state of this push item.
   state:
@@ -154,7 +154,7 @@ properties:
   # If this push item was GPG signed, this should be an identifier for the
   # signing key used.
   #
-  # Generically a short key ID such as &quot;F21541EB&quot; is used, though the library
+  # Generally a short key ID such as &quot;F21541EB&quot; is used, though the library
   # doesn&#39;t enforce this.
   signing_key:
     anyOf:
